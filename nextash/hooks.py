@@ -1,9 +1,9 @@
 from . import __version__ as app_version
 
-app_name = "nextash"
-app_title = "nextash"
-app_publisher = "nextash"
-app_description = "nextash"
+app_name = "Nextash"
+app_title = "Nextash"
+app_publisher = "Nextash"
+app_description = "Nextash"
 app_icon = "octicon octicon-file-directory"
 app_color = "grey"
 app_email = "support@nextash.com"
@@ -28,9 +28,13 @@ app_license = "MIT"
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
 # include js in page
+
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
+doctype_js = {
+	"Sales Invoice" : "public/js/sales_invoice.js"
+}
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}

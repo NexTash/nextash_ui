@@ -1,0 +1,27 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2022-05-16 18:01:03.505750",
+ "disable_prepared_report": 1,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2022-05-20 12:33:03.973220",
+ "modified_by": "Administrator",
+ "module": "nextash",
+ "name": "Petty Cash Report",
+ "owner": "Administrator",
+ "prepared_report": 1,
+ "ref_doctype": "Petty Cash",
+ "reference_report": "",
+ "report_name": "Petty Cash Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}
