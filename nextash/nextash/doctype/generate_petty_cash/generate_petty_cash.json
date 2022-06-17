@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{month}-{YYYY}",
+ "creation": "2022-06-14 12:08:01.737673",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "month",
+  "amount1",
+  "from_date",
+  "amended_from",
+  "remaining_amount"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "from_date",
+   "fieldtype": "Data",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Generate Petty Cash",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "options": "Jan\nFeb\nMar\nAprr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remaining_amount",
+   "fieldtype": "Float",
+   "label": "Remaining Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amount1",
+   "fieldtype": "Float",
+   "label": "Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-06-14 16:00:42.089104",
+ "modified_by": "Administrator",
+ "module": "nextash",
+ "name": "Generate Petty Cash",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

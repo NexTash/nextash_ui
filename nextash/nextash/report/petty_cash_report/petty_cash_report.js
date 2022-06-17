@@ -17,5 +17,6 @@ frappe.query_reports["Petty Cash Report"] = {
 			'reqd': 1,
 			"default":frappe.datetime.nowdate()
 		},
+		
 	]
 };

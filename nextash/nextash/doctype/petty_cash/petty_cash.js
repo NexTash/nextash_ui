@@ -11,6 +11,7 @@ frappe.ui.form.on('Petty Cash', {
 	price: function(frm) {
 		calc_amount(frm) 
 	},
+	
 });
 
 // functions

@@ -5,8 +5,15 @@ import frappe
 from frappe.model.document import Document
 
 class PettyCash(Document):
-	def validate(self):
-		if self.amount > 1000:
-			frappe.throw("amount can not be greater than 1000")
+	def on_submit(self):
 		
-		self.amount = self.amount * 2
+		if self.amount>self.total_amount:
+			frappe.throw("Amount increased kindly contact with admin to allow you more petty")
+		
+		doc = frappe.get_doc( 'Generate Petty Cash',  self.petty_document)
+		remaining=self.total_amount-self.amount
+
+		if remaining<0:
+			frappe.throw("You have Not Enough Petty Amount")
+		doc.db_set('remaining_amount', remaining)	
+		doc.save()

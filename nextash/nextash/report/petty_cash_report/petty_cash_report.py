@@ -16,6 +16,7 @@ def get_columns():
         {"fieldname": "qty", "label": "Quantity", "fieldtype": "Float"},
         {"fieldname": "date", "label": "Date", "fieldtype": "Date"},
 		{"fieldname": "price", "label": "Price", "fieldtype": "Currency"},
+        {"fieldname": "total_amount", "label": "Total Amount", "fieldtype": "link"},
 		{"fieldname": "reciept", "label": "Reciept", "fieldtype": "Attach image"},
 		{"fieldname": "description", "label": "Description", "fieldtype": "Text"},
        
@@ -36,6 +37,7 @@ def get_data(filters):
             "item":petty_doc.item,
             "date":petty_doc.date,
             "price":petty_doc.price,
+            "total_amount":petty_doc.total_amount,
             "reciept":petty_doc.receipt,
             "description":petty_doc.description,
         })
