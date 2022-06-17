@@ -1,0 +1,6 @@
+{
+  "js/nextash.min.js": [
+    "public/js/ui/toolbar/navbar.html",
+    "public/js/ui/toolbar/issue-report.js"
+  ]
+}
