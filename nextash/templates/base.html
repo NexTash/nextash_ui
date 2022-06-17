@@ -15,7 +15,7 @@
 	{% block favicon %}
 	<link
 		rel="shortcut icon"
-		href="{{ (favicon or "/files/nextash-logo.png") | abs_url }}"
+		href="{{ ('/files/nextash-logo.png') | abs_url }}"
 		type="image/x-icon"
 	>
 	{% endblock %}
@@ -69,30 +69,11 @@
 		{%- endif %}
 	{%- endblock -%}
 
-	{%- block navbar -%}
-		{{ web_block(
-			navbar_template or 'Standard Navbar',
-			values=_context_dict,
-			add_container=0,
-			add_top_padding=0,
-			add_bottom_padding=0,
-		) }}
-	{%- endblock -%}
-
 	{% block content %}
 		{{ content }}
 	{% endblock %}
 
-	{%- block footer -%}
-		{{ web_block(
-			footer_template or 'Standard Footer',
-			values=_context_dict,
-			add_container=0,
-			add_top_padding=0,
-			add_bottom_padding=0
-		) }}
-	{%- endblock -%}
-
+	
 	{% block base_scripts %}
 	<!-- js should be loaded in body! -->
 	<script type="text/javascript" src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
