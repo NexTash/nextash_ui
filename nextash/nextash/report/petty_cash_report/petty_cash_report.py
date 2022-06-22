@@ -2,12 +2,14 @@
 # For license information, please see license.txt
 
 
+from multiprocessing import Condition
+from warnings import filters
 import frappe
 from frappe import _
 
 def execute(filters=None):
 	columns, data = get_columns(), get_data(filters)
-	return columns, data
+	return columns, data,
 
 
 def get_columns():
@@ -21,25 +23,48 @@ def get_columns():
 		{"fieldname": "description", "label": "Description", "fieldtype": "Text"},
        
     ]
-    return(columns)
+    return columns
     
-def get_data(filters):
+# def get_data(filters):
+#     new_filter={}
+#     data=[]
+#     if filters.get("from_date") and filters.get("to_date") :
+#         new_filter['date']=['between',[filters.get("from_date"),filters.get("to_date")]]
+#     list_doc =frappe.db.get_list('Petty Cash',filters=new_filter,fields=['name'])
+    
+#     for row in list_doc:
+#         row=frappe.get_doc('Petty Cash', row.name)
+#         data.append({
+#             "qty":row.qty,
+#             "item":row.item,
+#             "date":row.date,
+#             "price":row.price,
+#             "total_amount":row.total_amount,
+#             "reciept":row.receipt,
+#             "description":row.description,
+#         })
+    
+    # return(data)
+def get_condition(c_filter):
     new_filter={}
-    data=[]
-    if filters.get("from_date") and filters.get("to_date") :
-        new_filter['date']=['between',[filters.get("from_date"),filters.get("to_date")]]
-    list_doc =frappe.db.get_list('Petty Cash',filters=new_filter,fields=['name'])
     
+    if c_filter.get("from_date") and c_filter.get("to_date"):
+        new_filter['date']=['between', [c_filter.get("from_date"),c_filter.get("to_date")]]
+    return new_filter
+def get_data(d_filter):
+    data = []
+    condition=get_condition(d_filter)
+    field_name=['*']
+    list_doc =frappe.db.get_list('Petty Cash',filters=condition,fields=field_name)
     for row in list_doc:
-        petty_doc=frappe.get_doc('Petty Cash', row.name)
         data.append({
-            "qty":petty_doc.qty,
-            "item":petty_doc.item,
-            "date":petty_doc.date,
-            "price":petty_doc.price,
-            "total_amount":petty_doc.total_amount,
-            "reciept":petty_doc.receipt,
-            "description":petty_doc.description,
+            "qty":row.qty,
+            "item":row.item,
+            "date":row.date,
+            "price":row.price,
+            "total_amount":row.total_amount,
+            "reciept":row.receipt,
+            "description":row.description,
         })
     
-    return(data)
+    return data

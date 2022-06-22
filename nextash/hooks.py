@@ -38,7 +38,8 @@ app_include_js = "/assets/js/nextash.min.js"
 
 # include js in doctype views
 doctype_js = {
-	"Sales Invoice" : "public/js/sales_invoice.js"
+	"Sales Invoice" : "public/js/sales_invoice.js",
+	"Task" : "public/js/task.js"
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
