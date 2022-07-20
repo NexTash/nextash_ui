@@ -1,5 +1,5 @@
 frappe
-  .call("qwipo_white_label.api.theme_settings.auth.get_auth_slogan")
+  .call("nextash.api.theme_settings.auth.get_auth_slogan")
   .then((r) => {
     const res = r.message;
     let auth_logo = res.auth_logo;
@@ -7,11 +7,11 @@ frappe
     let auth_text = res.auth_text;
 
     if (!auth_logo) {
-      auth_logo = "/assets/qwipo_white_label/images/nextash.jpg";
+      auth_logo = "/assets/nextash/images/nextash.jpg";
     }
 
     if (!auth_title) {
-      auth_title = "QWIPO";
+      auth_title = "Nextash";
     }
 
     if (!auth_text) {

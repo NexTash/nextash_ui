@@ -13,8 +13,9 @@
   padding: 0;
 }
 .app-logo {
-  width: 85px;
-  height: 77px;
+  
+  width: 150px;
+  height: 30px;
   max-height: 77px !important;
 }
 .for-login .auth-form,
@@ -23,12 +24,32 @@
   margin: 200px 30px;
   height: max-content;
   max-width: 700px;
+  
 }
 
 .auth-bg {
-  background-image: url("/assets/qwipo_white_label/images/pexels-photo-2.jpeg");
+  background-image: url("/assets/nextash/images/tech.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
   flex: 1;
+}
+.btn.btn-primary {
+  background-color: #C03022;
+  color: #fff;
+}
+.btn-primary:hover {
+
+  background-color: #a93328;
+  color: #fff;
+
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle{
+  background-color: #761b13;
+  color: #fff;
+}
+.btn-primary:focus{
+
+  border-color: #761b13 !important;
+    box-shadow: 0 0 0 0.2rem rgb(192,48,34 ,0.7) !important;
 }
