@@ -135,4 +135,11 @@
     background-size: cover;
     background-image: url("/pexels-photo-2.jpeg");
   }
+
+
+.btn.btn-login,
+.btn.btn-login:active
+{
+	background-color: #23B14D;
+}
   /*# sourceMappingURL=style.css.map */
