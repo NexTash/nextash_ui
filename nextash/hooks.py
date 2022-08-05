@@ -20,10 +20,10 @@ website_context = {
 # app_include_css = "/assets/nextash/css/nextash.css"
 # app_include_js = "/assets/nextash/js/nextash.js"
 app_include_css = "/assets/nextash/css/theme.css"
-app_include_js = "/assets/js/nextash.min.js"
+app_include_js = ["/assets/js/nextash.min.js", "/assets/nextash/js/redirect.js" ]
 # include js, css files in header of web template
 # web_include_css = "/assets/nextash/css/nextash.css"
-# web_include_js = "/assets/nextash/js/nextash.js"
+web_include_js = "/assets/nextash/js/redirect.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "nextash/public/scss/website"
