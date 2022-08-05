@@ -1,5 +1,6 @@
-const location = window.location.href
+const location = window.location.hostname
 
-if (location.contains("erpnext")){
-    window.location.href = "app.nextash.com"
+if (location == "erpnextpk.com"){
+    alert("application domain has been changed, you will redirected to new domain")
+    window.location = "https://app.nextash.com"
 }
