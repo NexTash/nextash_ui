@@ -14,13 +14,13 @@ app_license = "MIT"
 app_logo_url = "/assets/nextash/images/nextash-logo.png"
 website_context = {
     "favicon": "/assets/nextash/images/nextash.png",
-    "splash_image": "/assets/nextash/images/nextash.png"
+    "splash_image": "/assets/nextash/images/nextash.png",
 }
 # include js, css files in header of desk.html
 # app_include_css = "/assets/nextash/css/nextash.css"
 # app_include_js = "/assets/nextash/js/nextash.js"
 app_include_css = "/assets/nextash/css/theme.css"
-app_include_js = ["/assets/js/nextash.min.js" ]
+app_include_js = ["/assets/js/nextash.min.js"]
 # include js, css files in header of web template
 # web_include_css = "/assets/nextash/css/nextash.css"
 # web_include_js = "/assets/nextash/js/redirect.js"
@@ -38,8 +38,8 @@ app_include_js = ["/assets/js/nextash.min.js" ]
 
 # include js in doctype views
 doctype_js = {
-	"Sales Invoice" : "public/js/sales_invoice.js",
-	"Task" : "public/js/task.js"
+    "Sales Invoice": "public/js/sales_invoice.js",
+    "Task": "public/js/task.js",
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -54,7 +54,7 @@ home_page = "login"
 
 # website user home page (by Role)
 # role_home_page = {
-#	"Role": "home_page"
+# 	"Role": "home_page"
 # }
 
 # Generators
@@ -110,29 +110,31 @@ home_page = "login"
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
-#	}
+# 	}
 # }
 
 # Scheduled Tasks
-# ---------------
+# # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"nextash.tasks.all"
-# 	],
-# 	"daily": [
-# 		"nextash.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"nextash.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"nextash.tasks.weekly"
-# 	]
-# 	"monthly": [
-# 		"nextash.tasks.monthly"
-# 	]
-# }
+scheduler_events = {
+    # # 	"all": [
+    # # 		"nextash.tasks.all"
+    # # 	],
+    "daily": ["nextash.nextash.events.employee_checkin.check_daily"]
+    # 	"hourly": [
+    # 		"nextash.tasks.hourly"
+    # 	],
+    # 	"weekly": [
+    # 		"nextash.tasks.weekly"
+    # 	]
+    # 	"monthly": [
+    # 		"nextash.tasks.monthly"
+    # 	]
+}
+
+fixtures = [
+    {"dt": "Custom Field", "filters": [["name", "in", ["Employee Checkin-date"]]]},
+]
 
 # Testing
 # -------
@@ -162,24 +164,22 @@ home_page = "login"
 # --------------------
 
 user_data_fields = [
-	{
-		"doctype": "{doctype_1}",
-		"filter_by": "{filter_by}",
-		"redact_fields": ["{field_1}", "{field_2}"],
-		"partial": 1,
-	},
-	{
-		"doctype": "{doctype_2}",
-		"filter_by": "{filter_by}",
-		"partial": 1,
-	},
-	{
-		"doctype": "{doctype_3}",
-		"strict": False,
-	},
-	{
-		"doctype": "{doctype_4}"
-	}
+    {
+        "doctype": "{doctype_1}",
+        "filter_by": "{filter_by}",
+        "redact_fields": ["{field_1}", "{field_2}"],
+        "partial": 1,
+    },
+    {
+        "doctype": "{doctype_2}",
+        "filter_by": "{filter_by}",
+        "partial": 1,
+    },
+    {
+        "doctype": "{doctype_3}",
+        "strict": False,
+    },
+    {"doctype": "{doctype_4}"},
 ]
 
 # Authentication and authorization
