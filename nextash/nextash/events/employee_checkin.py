@@ -1,7 +1,9 @@
 from pickle import FALSE
 from pydoc import Doc
+from time import time
 import frappe
 from frappe.utils import today
+import datetime
 
 
 @frappe.whitelist()
@@ -19,9 +21,10 @@ def employee_checkin():
     roles = frappe.get_roles(frappe.session.user)
 
     # If User doesnot have Employee role OR He is and Administrator the sytem will show message.
+
     if "Employee" not in roles or "Administrator" in roles:
         frappe.throw("This is not an Employee")
-
+    
     employee_name = frappe.db.get_value("Employee", {"user_id": user}, "name")
     emp_checkin_doc = frappe.get_doc(
         {
@@ -51,23 +54,25 @@ def employee_checkout():
     # If User doesnot have Employee role OR He is and Administrator the sytem will show message.
     if "Employee" not in roles or "Administrator" in roles:
         frappe.throw("This is not an Employee")
+    employee_checkin = frappe.db.exists("Employee Checkin", {"employee": user, "date": today(), "log_type": "IN"})
+    if not employee_checkin:
+        employee_name = frappe.db.get_value("Employee", {"user_id": user}, "name")
+        emp_checkin_doc = frappe.get_doc(
+            {
+                "doctype": "Employee Checkin",
+                "employee": employee_name,
+                "log_type": "OUT",
+            }
+        )
+        emp_checkin_doc.insert()
 
-    employee_name = frappe.db.get_value("Employee", {"user_id": user}, "name")
-    emp_checkin_doc = frappe.get_doc(
-        {
-            "doctype": "Employee Checkin",
-            "employee": employee_name,
-            "log_type": "OUT",
-        }
-    )
-    emp_checkin_doc.insert()
-
-    return emp_checkin_doc
+        return emp_checkin_doc
 
 
 @frappe.whitelist()
 def check_status():
     # Getting session user
+    frappe.publish_realtime('raja')
 
     user = frappe.session.user
 
@@ -97,7 +102,8 @@ def check_status():
 @frappe.whitelist()
 def check_daily():
     employee = frappe.db.get_list("Employee")
-
+    
+    
     for row in employee:
         employee_checkin = frappe.db.exists("Employee Checkin", {"employee": row.name})
 
@@ -117,4 +123,20 @@ def check_daily():
                     }
                 )
                 emp_checkin_doc.insert()
-    frappe.db.commit()
+                frappe.db.commit()
+
+@frappe.whitelist()
+def cron_each_five():
+    curr_time=datetime.datetime.now().time() #getting currunt time
+    start_time=datetime.time(10,10,00)
+    end_time=datetime.time(14,10,00)
+    if curr_time <= start_time and curr_time >= end_time:
+        return
+
+    employee = frappe.db.get_list("Employee", ["name", "user"])
+
+    for row in employee:
+        employee_checkin = frappe.db.exists("Employee Checkin", {"employee": row.name, "date": today(), "log_type": "IN"})
+
+        if not employee_checkin:
+            frappe.publish_realtime('notification', None, row.user)

@@ -40,6 +40,7 @@ app_include_js = ["/assets/js/nextash.min.js"]
 doctype_js = {
     "Sales Invoice": "public/js/sales_invoice.js",
     "Task": "public/js/task.js",
+    "employee_checkin":"public/js/employee_checkin.js"
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -117,9 +118,11 @@ home_page = "login"
 # # ---------------
 
 scheduler_events = {
-    # # 	"all": [
-    # # 		"nextash.tasks.all"
-    # # 	],
+    "cron": {
+        "0/1 * * * *": [
+            "nextash.nextash.events.employee_checkin.cron_each_five",
+        ],
+    },
     "daily": ["nextash.nextash.events.employee_checkin.check_daily"]
     # 	"hourly": [
     # 		"nextash.tasks.hourly"
