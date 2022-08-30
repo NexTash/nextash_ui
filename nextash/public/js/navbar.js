@@ -47,6 +47,7 @@ $(document).on("click", "#employee-checkout", function () {
 
 $(document).ready(function () {
   frappe.realtime.on("notification", () => {
+    console.log("test1");
     frappe.show_alert(
       {
         message: __("Kindly Mark Your Attendance"),

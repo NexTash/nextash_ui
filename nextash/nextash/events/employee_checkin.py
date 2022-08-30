@@ -3,7 +3,7 @@ from pydoc import Doc
 from time import time
 import frappe
 from frappe.utils import today
-import datetime
+from datetime import datetime
 
 
 @frappe.whitelist()
@@ -127,9 +127,10 @@ def check_daily():
 
 @frappe.whitelist()
 def cron_each_five():
-    curr_time=datetime.datetime.now().time() #getting currunt time
-    start_time=datetime.time(10,10,00)
-    end_time=datetime.time(14,10,00)
+    now=datetime.now()
+    curr_time=now.strftime("%H:%M:%S") #getting currunt time
+    start_time=datetime.strptime('10:00:00',"%H:%M:%S") #starting time
+    end_time=datetime.strptime('13:00:00',"%H:%M:%S")
     if curr_time <= start_time and curr_time >= end_time:
         return
 
