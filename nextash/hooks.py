@@ -46,7 +46,8 @@ doctype_js = {
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
-on_login = 'nextash.nextash.events.auth.successful_login'
+on_session_creation = 'nextash.nextash.events.employee_checkin.employee_checkin'
+on_logout='nextash.nextash.events.employee_checkin.employee_checkout'
 # Home Pages
 # ----------
 
@@ -106,18 +107,16 @@ home_page = "login"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
 doc_events = {
-    'User': {
-        'validate': 'nextash.quota.validate_user_limit',
-    },
+	"User": {
+		"validate": "nextash.nextash.events.employee_checkin.employee_checkin",
+	}
 }
+# doc_events = {
+#     'User': {
+#         'validate': 'nextash.quota.validate_user_limit',
+#     },
+# }
 # Scheduled Tasks
 # # ---------------
 

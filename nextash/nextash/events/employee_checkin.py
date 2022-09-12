@@ -2,11 +2,11 @@ from pickle import FALSE
 from pydoc import Doc
 from time import time
 import frappe
-from frappe.utils import today
+from frappe.utils import today,add_days
 from datetime import datetime
 
 
-@frappe.whitelist()
+
 def employee_checkin():
     """
     This function will mark the attendence of the employee. It will not receive any
@@ -22,18 +22,20 @@ def employee_checkin():
 
     # If User doesnot have Employee role OR He is and Administrator the sytem will show message.
 
-    if "Employee" not in roles or "Administrator" in roles:
+    if "Employee" not in roles:
         frappe.throw("This is not an Employee")
-    
-    employee_name = frappe.db.get_value("Employee", {"user_id": user}, "name")
-    emp_checkin_doc = frappe.get_doc(
-        {
-            "doctype": "Employee Checkin",
-            "employee": employee_name,
-            "log_type": "IN",
-        }
-    )
-    emp_checkin_doc.insert()
+    elif "Administrator" in roles:
+        return;
+    if not frappe.db.exists("Employee Checkin", {"employee": user, "date": today(), "log_type": "IN"}):
+        employee_name = frappe.db.get_value("Employee", {"user_id": user}, "name")
+        emp_checkin_doc = frappe.get_doc(
+            {
+                "doctype": "Employee Checkin",
+                "employee": employee_name,
+                "log_type": "IN",
+            }
+        )
+        emp_checkin_doc.insert()
 
     return emp_checkin_doc
 
@@ -52,9 +54,12 @@ def employee_checkout():
     roles = frappe.get_roles(frappe.session.user)
 
     # If User doesnot have Employee role OR He is and Administrator the sytem will show message.
-    if "Employee" not in roles or "Administrator" in roles:
+    if "Employee" not in roles:
         frappe.throw("This is not an Employee")
-    employee_checkin = frappe.db.exists("Employee Checkin", {"employee": user, "date": today(), "log_type": "IN"})
+    elif "Administrator" in roles:
+        return;
+    
+    employee_checkin = frappe.db.exists("Employee Checkin", {"employee": user, "date": ['between',[today(),today()]], "log_type": "IN"})
     if not employee_checkin:
         employee_name = frappe.db.get_value("Employee", {"user_id": user}, "name")
         emp_checkin_doc = frappe.get_doc(
@@ -65,8 +70,6 @@ def employee_checkout():
             }
         )
         emp_checkin_doc.insert()
-
-        return emp_checkin_doc
 
 
 @frappe.whitelist()
