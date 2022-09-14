@@ -46,8 +46,8 @@ doctype_js = {
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
-on_session_creation = 'nextash.nextash.events.employee_checkin.employee_checkin'
-on_logout='nextash.nextash.events.employee_checkin.employee_checkout'
+on_session_creation = 'nextash.events.employee_checkin.employee_checkin'
+on_logout='nextash.events.employee_checkin.employee_checkout'
 # Home Pages
 # ----------
 
