@@ -107,7 +107,6 @@ home_page = "login"
 # ---------------
 # Hook on document methods and events
 
-doc_events = {
 	"User": {
 		"validate": "nextash.nextash.events.employee_checkin.employee_checkin",
 	}
