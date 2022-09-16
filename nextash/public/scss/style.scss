@@ -113,5 +113,13 @@ main {
       background-size: cover;
       background-image: url("/public/images/pexels-photo-2.jpeg");
     }
+    @media (min-width: 0px){
+      .for-login .page-card, .for-forgot .page-card, .for-signup .page-card, .for-email-login .page-card {
+          padding-top: 45px;
+          padding-bottom: 45px;
+          background-color: #fff;
+          box-shadow: var(--shadow-base);
+      }
+    }
   }
 }
