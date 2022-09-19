@@ -59,7 +59,7 @@ $(document).ready(function () {
 })
 
   frappe.call({
-    method: "nextash.nextash.events.employee_checkin.check_status",
+    method: "nextash.events.employee_checkin.check_status",
     args: {},
     
     callback: function (r) {
