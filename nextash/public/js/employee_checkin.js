@@ -10,7 +10,7 @@ frappe.ui.form.on('Employee Checkin', {
     before_save: (frm)=> {
       console.log("test1");
         frappe.call({
-            method: "nextash.nextash.events.employee_checkin.check_status",
+            method: "nextash.events.employee_checkin.check_status",
             args: {},
             
             callback: function (r) {

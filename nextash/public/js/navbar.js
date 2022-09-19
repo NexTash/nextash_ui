@@ -1,7 +1,7 @@
 // Custom scripts for Issue Panel
 $(document).on("click", "#employee-checkin", function () {
   frappe.call({
-    method: "nextash.nextash.events.employee_checkin.employee_checkin",
+    method: "nextash.events.employee_checkin.employee_checkin",
     args: {},
     callback: function (r) {
       if (!r.exc) {
@@ -25,7 +25,7 @@ $(document).on("click", "#employee-checkin", function () {
 
 $(document).on("click", "#employee-checkout", function () {
   frappe.call({
-    method: "nextash.nextash.events.employee_checkin.employee_checkout",
+    method: "nextash.events.employee_checkin.employee_checkout",
     args: {},
     callback: function (r) {
       if (!r.exc) {
@@ -59,7 +59,7 @@ $(document).ready(function () {
 })
 
   frappe.call({
-    method: "nextash.nextash.events.employee_checkin.check_status",
+    method: "nextash.events.employee_checkin.check_status",
     args: {},
     
     callback: function (r) {
