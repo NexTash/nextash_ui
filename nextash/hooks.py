@@ -11,10 +11,10 @@ app_license = "MIT"
 
 # Includes in <head>
 # ------------------
-app_logo_url = "/assets/nextash/images/nextash-logo.png"
+app_logo_url = "/assets/nextash/images/favicon.png"
 website_context = {
-    "favicon": "/assets/nextash/images/nextash.png",
-    "splash_image": "/assets/nextash/images/nextash.png",
+    "favicon": "/assets/nextash/images/favicon.png",
+    "splash_image": "/assets/nextash/images/favicon.png",
 }
 # include js, css files in header of desk.html
 # app_include_css = "/assets/nextash/css/nextash.css"
