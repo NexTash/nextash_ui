@@ -19,7 +19,7 @@ website_context = {
 
 # include js, css files in header of desk.html
 app_include_css = "nextash.bundle.css"
-app_include_js = "nextash.bundle.js"
+app_include_js = "toolbar.bundle.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/nextash/css/nextash.css"
@@ -50,7 +50,7 @@ on_logout='nextash.events.employee_checkin.employee_checkout'
 # ----------
 
 # application home page (will override Website Settings)
-home_page = "login"
+home_page = "nextash_home"
 
 # website user home page (by Role)
 # role_home_page = {
@@ -195,3 +195,4 @@ user_data_fields = [
 # Recommended only for DocTypes which have limited documents with untranslated names
 # For example: Role, Gender, etc.
 # translated_search_doctypes = []
+after_migrate = ['nextash.override.after_migrate']
