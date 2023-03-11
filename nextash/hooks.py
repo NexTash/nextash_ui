@@ -44,13 +44,13 @@ doctype_js = {
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
-on_session_creation = 'nextash.events.employee_checkin.employee_checkin'
-on_logout='nextash.events.employee_checkin.employee_checkout'
+# on_session_creation = 'nextash.events.employee_checkin.employee_checkin'
+# on_logout='nextash.events.employee_checkin.employee_checkout'
 # Home Pages
 # ----------
 
 # application home page (will override Website Settings)
-home_page = "nextash_home"
+# home_page = "nextash_home"
 
 # website user home page (by Role)
 # role_home_page = {

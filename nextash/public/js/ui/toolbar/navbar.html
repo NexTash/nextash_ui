@@ -102,20 +102,9 @@
           >
             <div id="help-links"></div>
             <div class="dropdown-divider documentation-links"></div>
-            {% for item in navbar_settings.help_dropdown %} {% if (!item.hidden)
-            { %} {% if (item.item_label != "Documentation") { %} {% if
-            (item.item_label != "About") { %} {% if (item.item_label != "User
-            Forum") { %} {% if (item.route) { %}
-            <a class="dropdown-item" href="{{ item.route }}">
-              {%= __(item.item_label) %}
-            </a>
-            {% } else if (item.action) { %}
-            <a class="dropdown-item" onclick="return {{ item.action }}">
-              {%= __(item.item_label) %}
-            </a>
-            {% } else { %}
-            <div class="dropdown-divider"></div>
-            {% } %} {% } %} {% } %} {% } %} {% } %} {% endfor %}
+
+            <a class="dropdown-item showHelpDialog" href="javascript:void(0)">Report an Issue</a>
+            <a class="dropdown-item" onclick="return frappe.ui.toolbar.show_shortcuts(event)">Keyboard Shortcuts</a>
           </div>
         </li>
         <li class="nav-item dropdown dropdown-navbar-user dropdown-mobile">
