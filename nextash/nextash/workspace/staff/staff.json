@@ -186,7 +186,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-03-23 19:00:55.975423",
+ "modified": "2023-03-23 19:44:09.142207",
  "modified_by": "Administrator",
  "module": "NexTash",
  "name": "Staff",
@@ -236,6 +236,18 @@
    "label": "Dashboard",
    "link_to": "Project",
    "type": "Dashboard"
+  },
+  {
+   "doc_view": "New",
+   "label": "Leave Application",
+   "link_to": "Leave Application",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Salary Slip",
+   "link_to": "Salary Slip",
+   "type": "DocType"
   }
  ],
  "title": "Staff"
