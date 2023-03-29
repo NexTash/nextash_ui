@@ -40,14 +40,14 @@ app_include_js = ["/assets/js/nextash.min.js"]
 doctype_js = {
     "Sales Invoice": "public/js/sales_invoice.js",
     # "Task": "public/js/task.js",
-    "employee_checkin":"public/js/employee_checkin.js"
+    "employee_checkin": "public/js/employee_checkin.js"
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 on_session_creation = 'nextash.events.employee_checkin.employee_checkin'
-on_logout='nextash.events.employee_checkin.employee_checkout'
+on_logout = 'nextash.events.employee_checkin.employee_checkout'
 # Home Pages
 # ----------
 
@@ -134,7 +134,18 @@ scheduler_events = {
 }
 
 fixtures = [
-    {"dt": "Custom Field", "filters": [["name", "in", ["Employee Checkin-date"]]]},
+    {
+        "dt": "Custom Field",
+        "filters": [
+            ["name", "in", [
+                "Employee Checkin-date",
+                "Task-requirement",
+                "Task-analysis",
+                "Task-solution"
+            ]
+            ]
+        ]
+    },
 ]
 
 # Testing
