@@ -1,0 +1,20 @@
+:root,
+[data-theme="light"] {
+  --primary: #0e0d0d;
+  --secondary: #8b0803;
+  --secondary-color: var(--secondary);
+  --primary-color: var(--primary);
+  --btn-height: 28px;
+
+  /* // Checkbox */
+  --checkbox-right-margin: var(--margin-xs);
+  --checkbox-size: 14px;
+  --checkbox-focus-shadow: 0 0 0 2px var(--gray-300);
+
+  --checkbox-gradient: linear-gradient(
+    180deg,
+    --secondary-color,
+    -124.51%,
+    var(--primary) 100%
+  );
+}

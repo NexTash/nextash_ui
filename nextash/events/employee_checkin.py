@@ -25,7 +25,8 @@ def employee_checkin():
     if "Employee" not in roles:
         frappe.throw("This is not an Employee")
     elif "Administrator" in roles:
-        return;
+        return
+        
     if not frappe.db.exists("Employee Checkin", {"employee_name": frappe.session.user_fullname, "date": today(), "log_type": "IN"}):
         employee_id = frappe.db.get_value("Employee", {"user_id": user}, "name")
         emp_checkin_doc = frappe.get_doc(

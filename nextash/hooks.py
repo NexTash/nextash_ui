@@ -16,11 +16,11 @@ website_context = {
     "favicon": "/assets/nextash/images/logo.webp",
     "splash_image": "/assets/nextash/images/logo.webp",
 }
+
 # include js, css files in header of desk.html
-# app_include_css = "/assets/nextash/css/nextash.css"
-# app_include_js = "/assets/nextash/js/nextash.js"
-app_include_css = "/assets/nextash/css/theme.css"
-app_include_js = ["/assets/js/nextash.min.js"]
+app_include_css = "nextash.bundle.css"
+app_include_js = "toolbar.bundle.js"
+
 # include js, css files in header of web template
 # web_include_css = "/assets/nextash/css/nextash.css"
 # web_include_js = "/assets/nextash/js/redirect.js"
@@ -38,21 +38,21 @@ app_include_js = ["/assets/js/nextash.min.js"]
 
 # include js in doctype views
 doctype_js = {
-    "Sales Invoice": "public/js/sales_invoice.js",
-    # "Task": "public/js/task.js",
-    "employee_checkin": "public/js/employee_checkin.js"
+    "employee_checkin":"public/js/employee_checkin.js
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
-on_session_creation = 'nextash.events.employee_checkin.employee_checkin'
-on_logout = 'nextash.events.employee_checkin.employee_checkout'
+
+# on_session_creation = 'nextash.events.employee_checkin.employee_checkin'
+# on_logout='nextash.events.employee_checkin.employee_checkout'
+
 # Home Pages
 # ----------
 
 # application home page (will override Website Settings)
-home_page = "login"
+# home_page = "nextash_home"
 
 # website user home page (by Role)
 # role_home_page = {
@@ -208,3 +208,4 @@ user_data_fields = [
 # Recommended only for DocTypes which have limited documents with untranslated names
 # For example: Role, Gender, etc.
 # translated_search_doctypes = []
+after_migrate = ['nextash.override.after_migrate']

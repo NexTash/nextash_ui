@@ -1,0 +1,32 @@
+.for-forgot,
+.for-login {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+
+  .auth-form {
+    width: 100%;
+    max-width: 375px;
+    margin: auto 40px;
+
+    .page-card {
+      padding: 45px;
+
+      .page-card-head {
+        margin-bottom: 1.5rem;
+       
+        img {
+          max-height: 150px;
+        }
+      }
+    }
+  }
+
+  .auth-bg {
+    flex: 1;
+    height: 100vh;
+    background-image: url("/assets/nextash/images/sideimage.jpg");
+    background-position: center center;
+    background-size: cover;
+  }
+}

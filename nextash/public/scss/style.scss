@@ -1,5 +1,3 @@
-@import "./variables";
-
 * {
   margin: 0;
   padding: 0;
@@ -105,14 +103,7 @@ main {
         }
       }
     }
-    .image-section {
-      width: 65%;
-      height: 100vh;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-image: url("/public/images/pexels-photo-2.jpeg");
-    }
+   
     @media (min-width: 0px){
       .for-login .page-card, .for-forgot .page-card, .for-signup .page-card, .for-email-login .page-card {
           padding-top: 45px;
