@@ -38,14 +38,16 @@ app_include_js = "toolbar.bundle.js"
 
 # include js in doctype views
 doctype_js = {
-    "employee_checkin":"public/js/employee_checkin.js"
+    "employee_checkin":"public/js/employee_checkin.js
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
 # on_session_creation = 'nextash.events.employee_checkin.employee_checkin'
 # on_logout='nextash.events.employee_checkin.employee_checkout'
+
 # Home Pages
 # ----------
 
@@ -132,7 +134,18 @@ scheduler_events = {
 }
 
 fixtures = [
-    {"dt": "Custom Field", "filters": [["name", "in", ["Employee Checkin-date"]]]},
+    {
+        "dt": "Custom Field",
+        "filters": [
+            ["name", "in", [
+                "Employee Checkin-date",
+                "Task-requirement",
+                "Task-analysis",
+                "Task-solution"
+            ]
+            ]
+        ]
+    },
 ]
 
 # Testing
