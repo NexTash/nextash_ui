@@ -139,9 +139,16 @@ fixtures = [
         "filters": [
             ["name", "in", [
                 "Employee Checkin-date",
+                "Task-details",
+                "Task-planning",
+                "Task-execution",
+                "Task-requirement_registered_by",
                 "Task-requirement",
+                "Task-analyzed_by",
                 "Task-analysis",
-                "Task-solution"
+                "Task-solution_by",
+                "Task-solution",
+                "Task-management",
             ]
             ]
         ]
