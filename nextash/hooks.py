@@ -38,7 +38,7 @@ app_include_js = "toolbar.bundle.js"
 
 # include js in doctype views
 doctype_js = {
-    "employee_checkin":"public/js/employee_checkin.js
+    "employee_checkin":"public/js/employee_checkin.js"
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -139,9 +139,16 @@ fixtures = [
         "filters": [
             ["name", "in", [
                 "Employee Checkin-date",
+                "Task-details",
+                "Task-planning",
+                "Task-execution",
+                "Task-requirement_registered_by",
                 "Task-requirement",
+                "Task-analyzed_by",
                 "Task-analysis",
-                "Task-solution"
+                "Task-solution_by",
+                "Task-solution",
+                "Task-management",
             ]
             ]
         ]
