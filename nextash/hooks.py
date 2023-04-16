@@ -37,9 +37,9 @@ app_include_js = "toolbar.bundle.js"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {
-    "employee_checkin":"public/js/employee_checkin.js"
-}
+# doctype_js = {
+#     "employee_checkin":"public/js/employee_checkin.js"
+# }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -115,45 +115,45 @@ doctype_js = {
 # Scheduled Tasks
 # # ---------------
 
-scheduler_events = {
-    "cron": {
-        "0/1 * * * *": [
-            "nextash.events.employee_checkin.cron_each_five",
-        ],
-    },
-    "daily": ["nextash.events.employee_checkin.check_daily"]
-    # 	"hourly": [
-    # 		"nextash.tasks.hourly"
-    # 	],
-    # 	"weekly": [
-    # 		"nextash.tasks.weekly"
-    # 	]
-    # 	"monthly": [
-    # 		"nextash.tasks.monthly"
-    # 	]
-}
+# scheduler_events = {
+#     "cron": {
+#         "0/1 * * * *": [
+#             "nextash.events.employee_checkin.cron_each_five",
+#         ],
+#     },
+#     "daily": ["nextash.events.employee_checkin.check_daily"]
+#     # 	"hourly": [
+#     # 		"nextash.tasks.hourly"
+#     # 	],
+#     # 	"weekly": [
+#     # 		"nextash.tasks.weekly"
+#     # 	]
+#     # 	"monthly": [
+#     # 		"nextash.tasks.monthly"
+#     # 	]
+# }
 
-fixtures = [
-    {
-        "dt": "Custom Field",
-        "filters": [
-            ["name", "in", [
-                "Employee Checkin-date",
-                "Task-details",
-                "Task-planning",
-                "Task-execution",
-                "Task-requirement_registered_by",
-                "Task-requirement",
-                "Task-analyzed_by",
-                "Task-analysis",
-                "Task-solution_by",
-                "Task-solution",
-                "Task-management",
-            ]
-            ]
-        ]
-    },
-]
+# fixtures = [
+#     {
+#         "dt": "Custom Field",
+#         "filters": [
+#             ["name", "in", [
+#                 "Employee Checkin-date",
+#                 "Task-details",
+#                 "Task-planning",
+#                 "Task-execution",
+#                 "Task-requirement_registered_by",
+#                 "Task-requirement",
+#                 "Task-analyzed_by",
+#                 "Task-analysis",
+#                 "Task-solution_by",
+#                 "Task-solution",
+#                 "Task-management",
+#             ]
+#             ]
+#         ]
+#     },
+# ]
 
 # Testing
 # -------
@@ -215,4 +215,4 @@ user_data_fields = [
 # Recommended only for DocTypes which have limited documents with untranslated names
 # For example: Role, Gender, etc.
 # translated_search_doctypes = []
-after_migrate = ['nextash.override.after_migrate']
+# after_migrate = ['nextash.override.after_migrate']
