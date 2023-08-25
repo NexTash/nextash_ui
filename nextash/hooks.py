@@ -38,7 +38,7 @@ app_include_js = "toolbar.bundle.js"
 
 # include js in doctype views
 doctype_js = {
-    "employee_checkin":"public/js/employee_checkin.js
+    "employee_checkin":"public/js/employee_checkin.js"
 }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
