@@ -3,7 +3,7 @@
     <a class="navbar-brand navbar-home" href="/app">
       <img
         class="app-logo"
-        style="width: {{ navbar_settings.logo_width || 24 }}px"
+        style="width: {{ navbar_settings.logo_width || 65 }}px"
         src="/assets/nextash/images/nextash-logo.png"
       />
     </a>
@@ -145,4 +145,4 @@
 </header>
 
 `;$(document).bind("toolbar_setup",function(){let e=$('a[href="https://github.com/frappe/erpnext/issues"]');e.attr("href","javascript:void(0)"),e.addClass("showHelpDialog")});$(document).on("click",".showHelpDialog",function(){new frappe.views.CommunicationComposer({doc:{},subject:"Report Issue",recipients:"support@nextash.com"})});$(document).on("click","#employee-checkin",function(){frappe.call({method:"nextash.events.employee_checkin.employee_checkin",args:{},callback:function(e){e.exc||(frappe.show_alert({message:__("Your attendence has been Marked"),indicator:"green"},5),$("#employee-checkin").hide(),$("#employee-checkout").show())}})});$(document).on("click","#employee-checkout",function(){frappe.call({method:"nextash.events.employee_checkin.employee_checkout",args:{},callback:function(e){e.exc||(frappe.show_alert({message:__("Your attendence has been Marked"),indicator:"green"},5),$("#employee-checkin").show(),$("#employee-checkout").hide())}})});$(document).ready(function(){frappe.call({method:"nextash.events.employee_checkin.check_status",args:{},callback:function(e){e.message==!0?($("#employee-checkin").hide(),$("#employee-checkout").show()):e.message==!1?($("#employee-checkin").show(),$("#employee-checkout").hide()):($("#employee-checkin").hide(),$("#employee-checkout").hide())}})});})();
-//# sourceMappingURL=toolbar.bundle.RYXOQUJT.js.map
+//# sourceMappingURL=toolbar.bundle.J3QQEPNC.js.map
